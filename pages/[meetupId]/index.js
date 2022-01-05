@@ -32,7 +32,8 @@ export async function getStaticPaths() {
     client.close();
 
     return {
-        fallback: false, // false - paths contains ALL possible paths | true - nextJS will try to generate page for the id which isnt in the array
+        // blocking - might be more valid pages
+        fallback: 'blocking', // false - paths contains ALL possible paths | true - nextJS will try to generate page for the id which isnt in the array
         paths: meetups.map(meetup => ({
             params: {
                 meetupId: meetup._id.toString(),

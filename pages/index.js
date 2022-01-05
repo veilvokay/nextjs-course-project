@@ -47,7 +47,7 @@ export async function getStaticProps() {
                 id: meetup._id.toString(),
             })),
         },
-        revalidate: 3600, // number of seconds which NextJS will wait until it regenerates its page for the incoming req
+        revalidate: 1, // number of seconds which NextJS will wait until it regenerates its page for the incoming req
     }; // need to return an object (always)
 }
 
